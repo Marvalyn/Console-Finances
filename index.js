@@ -134,6 +134,7 @@ for (var i = 0; i < finances.length - 1; i++) {
 //925441, 932089, -311434, 267252, -1876758, 1733696, 198551, -665765, 693229, -734926, 77242, 532869]
 
 const average = diffFinances.reduce((a, b) => a + b, 0) / diffFinances.length;
+
 console.log("Average Change: $" + average)
 
 
@@ -141,8 +142,33 @@ console.log("Average Change: $" + average)
 // start with 0
 //   check the last increase. If it's bigger than 0, keep track of the new biggest one.
 //   in a loop
+
+const max = diffFinances.reduce((a, b) => Math.max(a, b), -Infinity);
+
+// console.log(max)
+const find = diffFinances.find(element => element = 1926159);
+
+const stringMax = `Greatest Increase in Profits: ${finances[25][0]} $${(max)}`;
+
+console.log(stringMax); 
+
 // The greatest decrease in losses (date and amount) over the entire period.
 // console output format!
+
+const min = Math.min(116771, -662642, -391430, 379920, 212354, 510239, -428211, -821271, 693918, 416278, 
+    -974163, 860159, -1115009, 1033048, 95318, -308093, 99052, -521393, 605450, 231727, -65187, -702716, 177975, 
+    -1065544, 1926159, -917805, 898730, -334262, -246499, -64055, -1529236, 1497596, 304914, -635801, 398319, 
+    -183161, -37864, -253689, 403655, 94168, 306877, -83000, 210462, -2196167, 1465222, -956983, 1838447, -468003,
+    -64602, 206242, -242155, -449079, 315198, 241099, 111540, 365942, -219310, -368665, 409837, 151210, -110244, 
+    -341938, -1212159, 683246, -70825, 335594, 417334, -272194, -236462, 657432, -211262, -128237, -1750387, 
+    925441, 932089, -311434, 267252, -1876758, 1733696, 198551, -665765, 693229, -734926, 77242, 532869);
+
+// console.log(min)
+
+const stringMin = `Greatest Decrease in Profits: ${finances[45][0]} $${(min)}`;
+
+console.log(stringMin)
+//NOTED
 // Financial Analysis
 // ----------------------------
 // Total Months: 25

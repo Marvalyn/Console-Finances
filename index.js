@@ -114,22 +114,34 @@ console.log("Total: $" + sum);
 // The average of the changes in Profit/Losses over the entire period.
 // calculate each change by subtracting the previous month from this month
 
+//Method 1
+const createDifference = (finances) => {
+    const diffFinances = [];
+    for(let i = 1; i < finances.length - 1; i++){
+       diffFinances.push(Math.abs(finances[i + 1][1] - finances[i][1]));
+    };
+    return diffFinances;
+ }
+ console.log(createDifference(finances));
+
+ //method 2
 function diff (finances){
-    diffFinances=[];
-    for(var i=0; i<finances.length-1; i++){
-        diffFinances.push(finances[0][i]- finances[[0][i] + 1]);
+  var  diffFinances =[];
+    for(var i=1; i<finances.length-1; i++){
+        diffFinances.push(finances[i + 1][1]- finances[i][1]);
 
     }
     return diffFinances;
 }
 console.log(diff(finances));
 
-// var diffFinances = [];
-// for (var i = 0; i < finances.length-1; i++) {
-//   diffFinances.push(finances[i][0] - [finances[i][0] - 1]);
-// }
+//method 3
+var diffFinances = [];
+for (var i = 1; i < finances.length - 1; i++) {
+  diffFinances.push(finances[i + 1][1] - finances[i][1]);
+}
 
-// console.log(diffFinances);
+console.log(diffFinances);
 // You will need to track what the total change in profits is from month to month and then find the average.
 // (Total/total number of changes) ===> total change/(months - 1)
 // maybe put all the changes into an array? using .push(...) ?

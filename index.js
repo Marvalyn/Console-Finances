@@ -114,30 +114,8 @@ console.log("Total: $" + sum);
 // The average of the changes in Profit/Losses over the entire period.
 // calculate each change by subtracting the previous month from this month
 
-//Method 1
-const createDifference = (finances) => {
-    const diffFinances = [];
-    for(let i = 1; i < finances.length - 1; i++){
-       diffFinances.push(Math.abs(finances[i + 1][1] - finances[i][1]));
-    };
-    return diffFinances;
- }
- console.log(createDifference(finances));
-
- //method 2
-function diff (finances){
-  var  diffFinances =[];
-    for(var i=1; i<finances.length-1; i++){
-        diffFinances.push(finances[i + 1][1]- finances[i][1]);
-
-    }
-    return diffFinances;
-}
-console.log(diff(finances));
-
-//method 3
 var diffFinances = [];
-for (var i = 1; i < finances.length - 1; i++) {
+for (var i = 0; i < finances.length - 1; i++) {
   diffFinances.push(finances[i + 1][1] - finances[i][1]);
 }
 

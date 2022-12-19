@@ -86,3 +86,94 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+console.log("Financial Analysis");
+console.log("------------------------------------------");
+
+// The total number of months included in the dataset.
+// figure out how many rows there are in the finances variable
+console.log("Total Months: " + finances.length);
+
+// The net total amount of Profit/Losses over the entire period.
+// add everything together
+// probably a loop
+
+var sum = 0;
+
+// for (var i = 0; i < finances.length; i++){
+//     sum += 1;
+// }
+
+
+for(var i = 0;i < finances.length; i++){
+    sum += finances[i][1];
+}
+
+console.log("Total: $" + sum);
+
+
+// The average of the changes in Profit/Losses over the entire period.
+// calculate each change by subtracting the previous month from this month
+
+function diff (finances){
+    diffFinances=[];
+    for(var i=0; i<finances.length-1; i++){
+        diffFinances.push(finances[0][i]- finances[[0][i] + 1]);
+
+    }
+    return diffFinances;
+}
+console.log(diff(finances));
+
+// var diffFinances = [];
+// for (var i = 0; i < finances.length-1; i++) {
+//   diffFinances.push(finances[i][0] - [finances[i][0] - 1]);
+// }
+
+// console.log(diffFinances);
+// You will need to track what the total change in profits is from month to month and then find the average.
+// (Total/total number of changes) ===> total change/(months - 1)
+// maybe put all the changes into an array? using .push(...) ?
+// The greatest increase in profits (date and amount) over the entire period.
+// start with 0
+//   check the last increase. If it's bigger than 0, keep track of the new biggest one.
+//   in a loop
+// The greatest decrease in losses (date and amount) over the entire period.
+// console output format!
+// Financial Analysis
+// ----------------------------
+// Total Months: 25
+// Total: $2561231
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
+// 6:26
+// An example of calculating the average change over the first 5 months.
+// var finances = [
+// ['Jan-2010', 867884], // A
+// ['Feb-2010', 984655], // B
+// ['Mar-2010', 322013], // C
+// ['Apr-2010', -69417], // D
+// ['May-2010', 310503]  // E
+// To calculate the average change, I need to
+// 1. calculate the change from month to month
+// 2.    .... for each month
+//     First change is B - A: 984655 - 867884 =  116771
+//     Next  change is C - B: 322013 - 984655 = -662642
+//     Next  change is D - C: -69417 - 322013 = -391430
+//     Next  change is E - D: 310503 - -69417 =  379920
+// 3. Add all those changes together
+// 116771 + -662642 + -391430 + 379920 = -557381
+// 4. Divide by the total number of changes I calculated
+// -557381 / 4 = -139345.25
+// New
+// 6:31
+// OOH! How do I reference a value in a TWO-DIMENSIONAL array?
+// A two-dimensional array is an array that contains arrays. Like this:
+// var myArray = [ [ "Dan", 10 ], [ "Tucker", 42 ], [ "Hunter", 666 ], [ "Andrew", 99 ] ];
+
+// If I use bracket notation, I can grab an individual element.
+// myArray[2] is [ "Hunter", 666 ]
+
+// myArray[2][0]
+// var anotherArray = myArray[2];
+// var primeroElemento = myFavorite[0];

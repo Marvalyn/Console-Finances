@@ -16,7 +16,7 @@ The webpage can be accessed using any web browser on any device (desktop, laptop
 
 ## Usage
 
-This webpage can be accessed at https://marvalyn.github.io/Console-Finances/ the homescreen looks as follows; ![Console](../images/consolescreenshot.png)
+This webpage can be accessed at https://marvalyn.github.io/Console-Finances/ the homescreen looks as follows; ![Console](/images/consolescreenshot.png)
 
 ## Credits
 
